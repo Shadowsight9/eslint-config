@@ -3,26 +3,19 @@ const basic = require('@ubiquitous8/eslint-config-basic')
 module.exports = {
   extends: [
     '@ubiquitous8/eslint-config-basic',
-    'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
   ],
-  settings: {
-    'import/resolver': {
-      node: { extensions: ['.js', '.jsx', '.mjs', '.ts', '.tsx', '.d.ts'] },
-    },
-  },
   overrides: basic.overrides,
   rules: {
-    'import/named': 'off',
-
     // TS
-    '@typescript-eslint/ban-ts-comment': ['error', { 'ts-ignore': 'allow-with-description' }],
+    '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/member-delimiter-style': ['error', { multiline: { delimiter: 'none' } }],
     '@typescript-eslint/type-annotation-spacing': ['error', {}],
     '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports', disallowTypeAnnotations: false }],
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
     '@typescript-eslint/prefer-ts-expect-error': 'error',
-    '@typescript-eslint/no-require-imports': 'error',
+    '@typescript-eslint/no-require-imports': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
     // Override JS
     'no-useless-constructor': 'off',
     'indent': 'off',
@@ -105,6 +98,7 @@ module.exports = {
     '@typescript-eslint/no-loss-of-precision': 'error',
     'lines-between-class-members': 'off',
     '@typescript-eslint/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
+    '@typescript-eslint/no-unused-vars': 'warn',
 
     // ss
     'ss/generic-spacing': 'error',
@@ -126,7 +120,5 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/triple-slash-reference': 'off',
-    // handled by unused-imports/no-unused-imports
-    '@typescript-eslint/no-unused-vars': 'off',
   },
 }

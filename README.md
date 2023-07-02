@@ -1,8 +1,7 @@
 # @ubiquitous8/eslint-config
-Forked from @autfu/eslint-config
+Forked from [@autfu/eslint-config](https://github.com/antfu/eslint-config)
 
 
-[![npm](https://img.shields.io/npm/v/@ubiquitous8/eslint-config?color=a1b858&label=)](https://npmjs.com/package/@ubiquitous8/eslint-config)
 
 - Single quotes, no semi
 - Auto fix for formatting (aimed to be used standalone **without** Prettier)
@@ -77,18 +76,7 @@ Add the following settings to your `settings.json`:
 }
 ```
 
-### TypeScript Aware Rules
 
-Type aware rules are enabled when a `tsconfig.eslint.json` is found in the project root, which will introduce some stricter rules into your project. If you want to enable it while have no `tsconfig.eslint.json` in the project root, you can change tsconfig name by modifying `ESLINT_TSCONFIG` env.
-
-```js
-// .eslintrc.js
-process.env.ESLINT_TSCONFIG = 'tsconfig.json'
-
-module.exports = {
-  extends: '@ubiquitous8'
-}
-```
 
 ### Lint Staged
 
@@ -111,40 +99,3 @@ and then
 npm i -D lint-staged simple-git-hooks
 ```
 
-## FAQ
-
-### Prettier?
-
-[Why I don't use Prettier](https://ss.me/posts/why-not-prettier)
-
-### How to lint CSS?
-
-This config does NOT lint CSS. I personally use [UnoCSS](https://github.com/unocss/unocss) so I don't write CSS. If you still prefer CSS, you can use [stylelint](https://stylelint.io/) for CSS linting.
-
-### I prefer XXX...
-
-Sure, you can override the rules in your `.eslintrc` file.
-
-<!-- eslint-skip -->
-
-```jsonc
-{
-  "extends": "@ubiquitous8",
-  "rules": {
-    // your rules...
-  }
-}
-```
-
-Or you can always fork this repo and make your own.
-
-## Check Also
-
-- [ss/dotfiles](https://github.com/ss/dotfiles) - My dotfiles
-- [ss/vscode-settings](https://github.com/ss/vscode-settings) - My VS Code settings
-- [ss/ts-starter](https://github.com/ss/ts-starter) - My starter template for TypeScript library
-- [ss/vitesse](https://github.com/ss/vitesse) - My starter template for Vue & Vite app
-
-## License
-
-[MIT](./LICENSE) License &copy; 2019-PRESENT [Anthony Fu](https://github.com/ss)

@@ -10,8 +10,7 @@
     "test": "pnpm -r run test",
     "build": "pnpm -r run build",
     "prepare": "pnpm -r run stub",
-    "release": "bumpp -r && pnpm -r publish",
-    "publish": "pnpm -r publish packages/* --access public"
+    "release": "bumpp -r && pnpm -r publish packages/* --access public"
   },
   "devDependencies": {
     "@ubiquitous8/eslint-config": "workspace:*",

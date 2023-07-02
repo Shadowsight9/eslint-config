@@ -19,6 +19,7 @@
     "local-pkg": "^0.4.3"
   },
   "devDependencies": {
+    "@unocss/eslint-config": "^0.53.4",
     "eslint": "^8.41.0"
   }
 }

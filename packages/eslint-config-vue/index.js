@@ -1,8 +1,15 @@
 const { isPackageExists } = require('local-pkg')
 
 const useTypescript = isPackageExists('typescript')
+const useUnocss = isPackageExists('unocss')
 
 if (!useTypescript) console.warn('[@ubiquitous8/eslint-config] TypeScript is not installed, fallback to JS only.')
+
+const extendsList = [
+  'plugin:vue/vue3-recommended',
+  useTypescript ? '@ubiquitous8/eslint-config-ts' : '@ubiquitous8/eslint-config-basic',
+  useUnocss ? '@unocss' : null,
+].filter(Boolean)
 
 module.exports = {
   overrides: [
@@ -14,12 +21,7 @@ module.exports = {
       },
     },
   ],
-  extends: [
-    'plugin:vue/vue3-recommended',
-    useTypescript
-      ? '@ubiquitous8/eslint-config-ts'
-      : '@ubiquitous8/eslint-config-basic',
-  ],
+  extends: extendsList,
   rules: {
     'vue/multi-word-component-names': 'off',
     'vue/no-unused-vars': ['error', { ignorePattern: '^_' }],
