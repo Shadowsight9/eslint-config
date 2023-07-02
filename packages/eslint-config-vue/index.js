@@ -8,7 +8,7 @@ if (!useTypescript) console.warn('[@ubiquitous8/eslint-config] TypeScript is not
 const extendsList = [
   'plugin:vue/vue3-recommended',
   useTypescript ? '@ubiquitous8/eslint-config-ts' : '@ubiquitous8/eslint-config-basic',
-  useUnocss ? '@unocss' : null,
+  useUnocss ? 'plugin:@unocss/recommended' : null,
 ].filter(Boolean)
 
 module.exports = {

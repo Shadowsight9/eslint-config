@@ -15,11 +15,11 @@
   "dependencies": {
     "@ubiquitous8/eslint-config-basic": "workspace:*",
     "@ubiquitous8/eslint-config-ts": "workspace:*",
+    "@unocss/eslint-plugin": "^0.53.4",
     "eslint-plugin-vue": "^9.14.0",
     "local-pkg": "^0.4.3"
   },
   "devDependencies": {
-    "@unocss/eslint-config": "^0.53.4",
     "eslint": "^8.41.0"
   }
 }
