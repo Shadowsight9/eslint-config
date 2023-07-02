@@ -1,6 +1,6 @@
 {
   "name": "@ubiquitous8/eslint-config",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Shadowsight9's ESLint config",
   "author": "Shadowsight9 <huzi386@gmail.com> (https://github.com/Shadowsight9/)",
   "license": "MIT",
