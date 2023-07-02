@@ -1,0 +1,24 @@
+{
+  "name": "@ubiquitous8/eslint-config-monorepo",
+  "version": "0.0.2",
+  "private": true,
+  "packageManager": "pnpm@8.5.1",
+  "author": "Shadowsight9 <huzi386@gmail.com> (https://github.com/Shadowsight9/)",
+  "license": "MIT",
+  "scripts": {
+    "lint": "pnpm -r run stub && eslint .",
+    "test": "pnpm -r run test",
+    "build": "pnpm -r run build",
+    "prepare": "pnpm -r run stub",
+    "release": "bumpp -r && pnpm -r publish",
+    "publish": "pnpm -r publish packages/* --access public"
+  },
+  "devDependencies": {
+    "@ubiquitous8/eslint-config": "workspace:*",
+    "bumpp": "^9.1.0",
+    "eslint": "^8.41.0",
+    "eslint-plugin-ss": "link:./packages/eslint-plugin-ss",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.0.4"
+  }
+}

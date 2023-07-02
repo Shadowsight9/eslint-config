@@ -1,0 +1,6 @@
+{
+  "extends": "@ubiquitous8",
+  "plugins": [
+    "ss"
+  ]
+}
