@@ -5,13 +5,14 @@ const useTypescript = isPackageExists('typescript')
 const useUnocss = isPackageExists('unocss')
 const useReact = isPackageExists('react')
 
-if (!useTypescript) console.warn('[@shadowsight9/eslint-config] TypeScript is not installed, fallback to JS only.')
+console.warn(`[@shadowsight9] useTypescript: ${useTypescript}, useVue: ${useVue}, useUnocss: ${useUnocss}, useReact: ${useReact}`)
 
 const extendsList = [
-  useTypescript ? '@shadowsight9/eslint-config-ts' : '@shadowsight9/eslint-config-basic',
   useVue ? 'plugin:vue/vue3-recommended' : null,
   useReact ? ['plugin:react/recommended', 'plugin:react-hooks/recommended'] : null,
   useUnocss ? 'plugin:@unocss/recommended' : null,
+  // must be the last one
+  useTypescript ? '@shadowsight9/eslint-config-ts' : '@shadowsight9/eslint-config-basic',
 ]
 const vueRules = {
   'vue/multi-word-component-names': 'off',
@@ -53,7 +54,7 @@ const vueRules = {
   'vue/no-extra-parens': ['error', 'functions'],
   'vue/no-irregular-whitespace': 'error',
   'vue/no-loss-of-precision': 'error',
-  'vue/no-restricted-syntax': ['error', 'DebuggerStatement', 'LabeledStatement', 'WithStatement' ],
+  'vue/no-restricted-syntax': ['error', 'DebuggerStatement', 'LabeledStatement', 'WithStatement'],
   'vue/no-sparse-arrays': 'warn',
   'vue/object-curly-newline': ['error', { multiline: true, consistent: true }],
   'vue/object-curly-spacing': ['error', 'always'],
@@ -82,5 +83,3 @@ module.exports = {
     ...(useVue ? vueRules : {}),
   },
 }
-
-

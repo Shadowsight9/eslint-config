@@ -2,11 +2,14 @@ const basic = require('@shadowsight9/eslint-config-basic')
 
 module.exports = {
   extends: [
+    '@shadowsight9/eslint-config-basic',
     'plugin:@typescript-eslint/recommended',
   ],
   plugins: [
     '@shadowsight9',
+    '@typescript-eslint',
   ],
+  parser: '@typescript-eslint/parser',
   overrides: basic.overrides,
   rules: {
     // TS
