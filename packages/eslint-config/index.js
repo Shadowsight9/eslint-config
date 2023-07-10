@@ -5,8 +5,6 @@ const useTypescript = isPackageExists('typescript')
 const useUnocss = isPackageExists('unocss')
 const useReact = isPackageExists('react')
 
-console.warn(`[@shadowsight9] useTypescript: ${useTypescript}, useVue: ${useVue}, useUnocss: ${useUnocss}, useReact: ${useReact}`)
-
 function getVueRules() {
   return useVue 
     ? {
