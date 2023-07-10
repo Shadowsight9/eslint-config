@@ -45,9 +45,9 @@ module.exports = {
     '.vitepress/cache',
   ],
   plugins: [
+    '@shadowsight9',
     'html',
     'unicorn',
-    'ss',
     'no-only-tests',
   ],
   overrides: [
@@ -157,8 +157,6 @@ module.exports = {
         'no-undef': 'off',
         'no-unused-expressions': 'off',
         'no-unused-vars': 'off',
-        'ss/no-cjs-exports': 'off',
-        'ss/no-ts-export-equal': 'off',
       },
     },
   ],
@@ -288,7 +286,7 @@ module.exports = {
     'yml/no-empty-document': 'off',
 
     // ss
-    'ss/top-level-function': 'error',
-    'ss/generic-spacing': 'error',
+    '@shadowsight9/top-level-function': 'error',
+    '@shadowsight9/generic-spacing': 'error',
   },
 }

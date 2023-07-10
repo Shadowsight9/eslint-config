@@ -1,5 +1,5 @@
 {
-  "name": "@ubiquitous8/eslint-config-ts",
+  "name": "@shadowsight9/eslint-config-ts",
   "version": "0.0.4",
   "license": "MIT",
   "keywords": [
@@ -14,7 +14,7 @@
     "typescript": ">=3.9"
   },
   "dependencies": {
-    "@ubiquitous8/eslint-config-basic": "workspace:*",
+    "@shadowsight9/eslint-config-basic": "workspace:*",
     "@typescript-eslint/eslint-plugin": "^5.59.7",
     "@typescript-eslint/parser": "^5.59.7"
   },

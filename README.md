@@ -1,4 +1,4 @@
-# @ubiquitous8/eslint-config
+# @shadowsight9/eslint-config
 Forked from [@autfu/eslint-config](https://github.com/antfu/eslint-config)
 
 
@@ -16,14 +16,14 @@ Forked from [@autfu/eslint-config](https://github.com/antfu/eslint-config)
 ### Install
 
 ```bash
-pnpm add -D eslint @ubiquitous8/eslint-config
+pnpm add -D eslint @shadowsight9/eslint-config
 ```
 
 ### Config `.eslintrc`
 
 ```json
 {
-  "extends": "@ubiquitous8"
+  "extends": "@shadowsight9"
 }
 ```
 

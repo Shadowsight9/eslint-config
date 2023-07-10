@@ -1,5 +1,5 @@
 {
-  "name": "@ubiquitous8/eslint-config-monorepo",
+  "name": "@shadowsight9/eslint-config-monorepo",
   "version": "0.0.4",
   "private": true,
   "packageManager": "pnpm@8.5.1",
@@ -13,10 +13,10 @@
     "release": "bumpp -r && pnpm -r publish packages/* --access public"
   },
   "devDependencies": {
-    "@ubiquitous8/eslint-config": "workspace:*",
+    "@shadowsight9/eslint-config": "workspace:*",
+    "@shadowsight9/eslint-plugin": "workspace:*",
     "bumpp": "^9.1.0",
     "eslint": "^8.41.0",
-    "eslint-plugin-ss": "link:./packages/eslint-plugin-ss",
     "rimraf": "^5.0.1",
     "typescript": "^5.0.4"
   }

@@ -1,5 +1,5 @@
 {
-  "name": "@ubiquitous8/eslint-config-basic",
+  "name": "@shadowsight9/eslint-config-basic",
   "version": "0.0.4",
   "license": "MIT",
   "keywords": [
@@ -16,7 +16,7 @@
     "eslint": ">=7.4.0"
   },
   "dependencies": {
-    "eslint-plugin-ss": "workspace:*",
+    "@shadowsight9/eslint-plugin": "workspace:*",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-html": "^7.1.0",
     "eslint-plugin-jsonc": "^2.8.0",

@@ -1,9 +1,11 @@
-const basic = require('@ubiquitous8/eslint-config-basic')
+const basic = require('@shadowsight9/eslint-config-basic')
 
 module.exports = {
   extends: [
-    '@ubiquitous8/eslint-config-basic',
     'plugin:@typescript-eslint/recommended',
+  ],
+  plugins: [
+    '@shadowsight9',
   ],
   overrides: basic.overrides,
   rules: {
@@ -101,10 +103,10 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'warn',
 
     // ss
-    'ss/generic-spacing': 'error',
-    'ss/no-cjs-exports': 'error',
-    'ss/no-ts-export-equal': 'error',
-    'ss/no-const-enum': 'error',
+    '@shadowsight9/generic-spacing': 'error',
+    '@shadowsight9/no-cjs-exports': 'error',
+    '@shadowsight9/no-ts-export-equal': 'error',
+    '@shadowsight9/no-const-enum': 'error',
 
     // off
     '@typescript-eslint/consistent-indexed-object-style': 'off',
