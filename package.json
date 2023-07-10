@@ -17,6 +17,7 @@
     "@shadowsight9/eslint-plugin": "workspace:*",
     "bumpp": "^9.1.0",
     "eslint": "^8.41.0",
+    "eslint-define-config": "^1.21.0",
     "rimraf": "^5.0.1",
     "typescript": "^5.0.4"
   }
