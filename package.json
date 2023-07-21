@@ -1,6 +1,6 @@
 {
   "name": "@shadowsight9/eslint-config-monorepo",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": true,
   "packageManager": "pnpm@8.5.1",
   "author": "Shadowsight9 <huzi386@gmail.com> (https://github.com/Shadowsight9/)",
