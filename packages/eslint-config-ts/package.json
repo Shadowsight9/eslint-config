@@ -1,6 +1,6 @@
 {
   "name": "@shadowsight9/eslint-config-ts",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "license": "MIT",
   "keywords": [
     "eslint-config"
