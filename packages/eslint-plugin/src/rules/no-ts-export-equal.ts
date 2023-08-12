@@ -20,8 +20,7 @@ export default createEslintRule<Options, MessageIds>({
   defaultOptions: [],
   create: (context) => {
     const extension = context.getFilename().split('.').pop()
-    if (!['ts', 'tsx', 'mts', 'cts'].includes(extension))
-      return {}
+    if (!['ts', 'tsx', 'mts', 'cts'].includes(extension)) return {}
 
     return {
       TSExportAssignment(node) {

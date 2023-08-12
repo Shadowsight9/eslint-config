@@ -22,29 +22,21 @@ export default createEslintRule<Options, MessageIds>({
   create: (context) => {
     return {
       VariableDeclaration(node) {
-        if (node.parent.type !== 'Program' && node.parent.type !== 'ExportNamedDeclaration')
-          return
+        if (node.parent.type !== 'Program' && node.parent.type !== 'ExportNamedDeclaration') { return }
 
-        if (node.declarations.length !== 1)
-          return
-        if (node.kind !== 'const')
-          return
-        if (node.declare)
-          return
+        if (node.declarations.length !== 1) { return }
+        if (node.kind !== 'const') { return }
+        if (node.declare) { return }
 
         const declaration = node.declarations[0]
 
-        if (declaration.init?.type !== 'ArrowFunctionExpression')
-          return
-        if (declaration.id?.type !== 'Identifier')
-          return
-        if (declaration.id.typeAnnotation)
-          return
+        if (declaration.init?.type !== 'ArrowFunctionExpression') { return }
+        if (declaration.id?.type !== 'Identifier') { return }
+        if (declaration.id.typeAnnotation) { return }
         if (
           declaration.init.body.type !== 'BlockStatement'
           && declaration.id?.loc.start.line === declaration.init?.body.loc.end.line
-        )
-          return
+        ) { return }
 
         const arrowFn = declaration.init
         const body = declaration.init.body

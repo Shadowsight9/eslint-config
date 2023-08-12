@@ -32,7 +32,7 @@ export default createEslintRule<Options, MessageIds>({
             context.report({
               node,
               messageId: 'genericSpacingMismatch',
-              *fix(fixer) {
+              * fix(fixer) {
                 yield fixer.replaceTextRange([node.range[0] - preSpace.length, node.range[0]], '')
               },
             })
@@ -49,7 +49,7 @@ export default createEslintRule<Options, MessageIds>({
           const span = sourceCode.text.slice(from, to)
           if (span !== ', ' && !span.match(/,\n/)) {
             context.report({
-              *fix(fixer) {
+              * fix(fixer) {
                 yield fixer.replaceTextRange([from, to], ', ')
               },
               loc: {
@@ -64,14 +64,13 @@ export default createEslintRule<Options, MessageIds>({
       },
       // add space around = in type Foo<T = true>
       TSTypeParameter: (node) => {
-        if (!node.default)
-          return
+        if (!node.default) { return }
         const endNode = node.constraint || node.name
         const from = endNode.range[1]
         const to = node.default.range[0]
         if (sourceCode.text.slice(from, to) !== ' = ') {
           context.report({
-            *fix(fixer) {
+            * fix(fixer) {
               yield fixer.replaceTextRange([from, to], ' = ')
             },
             loc: {

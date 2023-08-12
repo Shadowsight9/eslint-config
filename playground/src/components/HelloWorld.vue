@@ -7,7 +7,6 @@ if (true) {
   const a = 1
 } else {
   const b = 2
-  debugger
 }
 
 const obj = { 1.1: 1, b: 2 }
@@ -18,7 +17,6 @@ type A = 1
 
 <template>
   <div class="greetings">
-    <h1 class="green"> {{ msg }} </h1>
     <h3>
       You’ve successfully created a project with
       <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
