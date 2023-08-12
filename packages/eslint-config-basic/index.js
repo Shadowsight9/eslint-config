@@ -4,10 +4,11 @@ const IGNORE_FILE_PATH = './.gitignore'
 
 function readIgnorPatterns(filePath) {
   try {
-    return fs.readFileSync(filePath || IGNORE_FILE_PATH, 'utf8')
+    const patterns = fs.readFileSync(filePath || IGNORE_FILE_PATH, 'utf8')
       .split('\n')
       .map(line => line.trim())
       .filter(line => line && !line.startsWith('#'))
+    return patterns
   } catch (error) {
     console.error(error)
     return []
@@ -21,12 +22,20 @@ module.exports = {
     node: true,
   },
   reportUnusedDisableDirectives: true,
+  plugins: [
+    '@shadowsight9',
+    'html',
+    'css',
+    'unicorn',
+    'no-only-tests',
+  ],
   extends: [
     './standard',
     'plugin:eslint-comments/recommended',
     'plugin:jsonc/recommended-with-jsonc',
     'plugin:yml/standard',
     'plugin:markdown/recommended',
+    'plugin:css/recommended',
   ],
   ignorePatterns: [
     ...readIgnorPatterns(),
@@ -37,13 +46,15 @@ module.exports = {
       'pnpm-lock.yaml',
       'yarn.lock',
       '__snapshots__',
+      '*.css',
+      '*.png',
+      '*.ico',
+      '*.toml',
+      '*.patch',
+      '*.txt',
+      '*.crt',
+      '*.key',
     ],
-  ],
-  plugins: [
-    '@shadowsight9',
-    'html',
-    'unicorn',
-    'no-only-tests',
   ],
   overrides: [
     {
