@@ -9,6 +9,6 @@
     "./packages/**/*.ts"
   ],
   "exclude": [
-    "./fixtures/**/*.*"
+    "./playground/**/*.*"
   ]
 }

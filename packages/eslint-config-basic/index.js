@@ -1,3 +1,19 @@
+const fs = require('node:fs')
+
+const IGNORE_FILE_PATH = './.gitignore'
+
+function readIgnorPatterns(filePath) {
+  try {
+    return fs.readFileSync(filePath || IGNORE_FILE_PATH, 'utf8')
+      .split('\n')
+      .map(line => line.trim())
+      .filter(line => line && !line.startsWith('#'))
+  } catch (error) {
+    console.error(error)
+    return []
+  }
+}
+
 module.exports = {
   env: {
     es6: true,
@@ -13,35 +29,15 @@ module.exports = {
     'plugin:markdown/recommended',
   ],
   ignorePatterns: [
-    '*.min.*',
-    'CHANGELOG.md',
-    'dist',
-    'LICENSE*',
-    'output',
-    'out',
-    'coverage',
-    'public',
-    'temp',
-    'package-lock.json',
-    'pnpm-lock.yaml',
-    'yarn.lock',
-    '__snapshots__',
-    // ignore for in lint-staged
-    '*.css',
-    '*.png',
-    '*.ico',
-    '*.toml',
-    '*.patch',
-    '*.txt',
-    '*.crt',
-    '*.key',
-    'Dockerfile',
-    // force include
-    '!.github',
-    '!.vitepress',
-    '!.vscode',
-    // force exclude
-    '.vitepress/cache',
+    ...readIgnorPatterns(),
+    ...[
+      'CHANGELOG.md',
+      'LICENSE*',
+      'package-lock.json',
+      'pnpm-lock.yaml',
+      'yarn.lock',
+      '__snapshots__',
+    ],
   ],
   plugins: [
     '@shadowsight9',
@@ -165,7 +161,6 @@ module.exports = {
     // 'curly': ['error', 'multi-or-nest', 'consistent'],
     'quotes': ['error', 'single'],
     'quote-props': ['error', 'consistent-as-needed'],
-
     'no-param-reassign': 'off',
     'array-bracket-spacing': ['error', 'never'],
     'brace-style': ['error', '1tbs', { allowSingleLine: true }],
@@ -223,7 +218,6 @@ module.exports = {
     'consistent-return': 'off',
     'complexity': 'off',
     'no-empty': 'off',
-    'no-trailing-spaces': 'off',
     'eqeqeq': ['error', 'smart'],
     'no-alert': 'off',
     'no-case-declarations': 'error',
